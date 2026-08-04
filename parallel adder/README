@@ -1,0 +1,93 @@
+# 4-Bit Parallel Adder using Verilog HDL
+
+## Overview
+
+This project implements a **4-bit Parallel Adder** in Verilog HDL.
+
+A Parallel Adder adds two 4-bit binary numbers simultaneously using combinational logic. It accepts an optional carry input (`Cin`) and produces a 4-bit sum (`Sum`) and a carry output (`Cout`).
+
+---
+
+## Features
+
+- 4-bit binary addition
+- Carry input (Cin)
+- Carry output (Cout)
+- Verilog HDL implementation
+- Testbench for simulation
+
+---
+
+## Inputs
+
+- `A[3:0]` – First 4-bit operand
+- `B[3:0]` – Second 4-bit operand
+- `Cin` – Carry input
+
+## Outputs
+
+- `Sum[3:0]` – 4-bit sum
+- `Cout` – Carry output
+
+---
+
+## Files
+
+- `parallel_adder.v` – Verilog module
+- `parallel_adder_tb.v` – Testbench
+- `simulation_output.png` – Simulation waveform
+- `README.md` – Project documentation
+
+---
+
+## Simulation
+
+Compile:
+
+```bash
+iverilog -o parallel_adder parallel_adder.v parallel_adder_tb.v
+```
+
+Run:
+
+```bash
+vvp parallel_adder
+```
+
+View waveform:
+
+```bash
+gtkwave dump.vcd
+```
+
+---
+
+## Example
+
+```
+A    = 0011
+B    = 0101
+Cin  = 0
+
+Sum  = 1000
+Cout = 0
+```
+
+---
+
+## Expected Output
+
+```
+A      B     Cin | Cout Sum
+0000 0000  0   | 0    0000
+0011 0101  0   | 0    1000
+0110 0011  1   | 0    1010
+1111 0001  0   | 1    0000
+1010 0101  1   | 1    0000
+```
+
+---
+
+## Author
+
+Your Name
